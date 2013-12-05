@@ -43,12 +43,12 @@ void pre_auton()
 
 //Robot Movement
 
-void moveRightMotors(int speed, int limit){
+void moveRightMotors(int speed, float limit){
 	motor[port10] = speed*limit;
 	motor[port9] = speed*limit;
 }
 
-void moveLeftMotors(int speed, int limit){
+void moveLeftMotors(int speed, float limit){
 	motor[port1] = speed*limit;
 	motor[port2] = speed*limit;
 }
@@ -59,8 +59,8 @@ void stopDriveMotors(){
 }
 
 void moveForward(int t, int speed){
-	moveLeftMotors(speed,1);
-	moveRightMotors(speed,1);
+	moveLeftMotors(speed,0.5);
+	moveRightMotors(speed,0.5);
 
 	wait1Msec(t);
 
